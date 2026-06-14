@@ -37,7 +37,7 @@ physical = st.selectbox(
 st.markdown("---")
 
 if st.button("내 최적 포지션 확인하기", use_container_width=True):
-    # 로컬 테스트용 주소 (Docker/EC2 가기 전에 로컬 확인용)
+   
     BACKEND_URL = "http://localhost:8000/recommend"
     
     payload = {"action": action, "crisis": crisis, "physical": physical}
