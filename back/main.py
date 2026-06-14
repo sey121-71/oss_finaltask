@@ -19,7 +19,7 @@ class UserData(BaseModel):
 
 @app.post("/recommend")
 def recommend_position(data: UserData):
-    # 빈 공간 침투 성향
+    
     if "빈 공간" in data.action:
         if "과감한 패스" in data.crisis:
             position = "스트라이커 (Striker - ST)"
@@ -30,7 +30,7 @@ def recommend_position(data: UserData):
             desc = "빠른 스피드로 측면 공간을 허물고 크로스를 올리거나 안쪽으로 파고드는 크랙입니다."
             tip = "순간적인 가속도와 1대1 돌파 기술을 연마하세요."
 
-    # 패스 및 조율 성향
+    
     elif "위치를 넓게" in data.action:
         if "활동량" in data.physical:
             position = "중앙 미드필더 (Central Midfielder - CM)"
@@ -41,7 +41,7 @@ def recommend_position(data: UserData):
             desc = "창의적인 패스로 어시스트를 하는 플레이메이커입니다."
             tip = "상대 압박 속에서도 볼을 소유하는 탈압박 능력을 키우세요."
 
-    # 수비 및 마크 성향
+  
     else:
         if "활동량" in data.physical:
             position = "수비형 미드필더 (Defensive Midfielder - CDM)"
